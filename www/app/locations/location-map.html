@@ -1,4 +1,4 @@
-<ion-view title="Location Map" ng-controller="LocationMapCtrl as vm">
+<ion-view title="{{vm.location.name}}" ng-controller="LocationMapCtrl as vm">
   <ion-content class="has-header">
     <google-map draggable="true" center="vm.map.center" zoom="vm.map.zoom">
         <marker coords="vm.marker" click="vm.locationClicked(vm.marker)">

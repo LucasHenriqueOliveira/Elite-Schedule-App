@@ -11,7 +11,7 @@
         vm.map = {
             center: {
                 latitude: 38.897677,
-                longitude: -77.036530
+                longitude: -77.036530,
             },
             zoom: 12
         };

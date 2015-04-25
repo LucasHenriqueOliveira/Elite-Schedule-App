@@ -12,8 +12,8 @@ angular.module("eliteApp", ["ionic", "angular-data.DSCacheFactory", "google-maps
       StatusBar.styleDefault();
     }
 
-    DSCacheFactory("leagueDataCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
-    DSCacheFactory("leaguesCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
+    DSCacheFactory("leagueDataCache", { storageMode: "localStorage", maxAge: 720000, deleteOnExpire: "aggressive" });
+    DSCacheFactory("leaguesCache", { storageMode: "localStorage", maxAge: 720000, deleteOnExpire: "aggressive" });
     DSCacheFactory("myTeamsCache", { storageMode: "localStorage" });
     DSCacheFactory("staticCache", { storageMode: "localStorage" });
   });
@@ -103,6 +103,15 @@ angular.module("eliteApp", ["ionic", "angular-data.DSCacheFactory", "google-maps
       views: {
         'mainContent': {
           templateUrl: "app/locations/location-map.html"
+        }
+      }
+    })
+
+    .state('app.location-schedule', {
+      url: "/location-schedule/:id",
+      views: {
+        'mainContent': {
+          templateUrl: "app/locations/location-schedule.html"
         }
       }
     })

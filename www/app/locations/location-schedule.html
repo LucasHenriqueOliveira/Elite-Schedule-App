@@ -1,0 +1,32 @@
+<ion-view title="Location Schedule" ng-controller="LocationScheduleCtrl as vm">
+    <div class="bar bar-subheader bar-energized">
+        <h2 class="title">{{vm.location.name}}</h2>
+    </div>
+    
+  <ion-content class="has-header has-subheader">
+    <div class="list">
+            <a class="item item-icon-right" ng-repeat="game in vm.games" ng-href="#/app/game/{{game.id}}">
+                <div class="row">
+                    <div class="col-20 col-center">
+                        <p>{{game.time | date:'M/d/yy'}}</p>
+                        <p>{{game.time | date:'shortTime'}}</p>
+                    </div>
+
+                    <div class="col col-center">
+                        <h2>
+                            <span>{{game.team1}}</span>
+                            <span ng-show="{{game.team1Score}}" ng-class="vm.setScoreCss(game.team1Score, game.team2Score)">({{game.team1Score}})</span>
+                        </h2>
+                        <p>vs.</p>
+                        <h2>
+                            <span>{{game.team2}}</span>
+                            <span ng-show="{{game.team2Score}}" ng-class="vm.setScoreCss(game.team2Score, game.team1Score)">({{game.team2Score}})</span>
+                        </h2>
+                    </div>
+
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </div>
+            </a>
+        </div>
+  </ion-content>
+</ion-view>
